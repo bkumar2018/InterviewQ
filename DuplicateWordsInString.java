@@ -10,10 +10,7 @@ public class DuplicateWordsInString {
 		// TODO Auto-generated method stub
 
 
-
 		findDuplicateWords(" java python java test python");
-	
-	
 	}
 	
 	public static void findDuplicateWords(String inStr) {
