@@ -9,7 +9,11 @@ public class DuplicateWordsInString {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+
+
 		findDuplicateWords(" java python java test python");
+	
+	
 	}
 	
 	public static void findDuplicateWords(String inStr) {
