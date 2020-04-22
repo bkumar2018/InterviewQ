@@ -22,9 +22,33 @@ public class ReverseString {
 		
 		reverseStringBytoCharArrayStartNEnd(str);
 		
+		pub();
 		
+		// using StringBuffer 
+		// String is immutable[ unable to be changed.] StringBuffer is mutable, StringBuffer class have reverse method
+		
+		StringBuffer sb = new StringBuffer("Selenium");
+		System.out.println(sb.reverse());
 	}
 	
+	//using for loop
+	private static void pub() {
+		// TODO Auto-generated method stub
+		
+		String str = "Selenium";
+		
+		int len = str.length();
+		String rev= "";
+		
+		for(int i=len-1; i>=0; i-- ) {
+			rev = rev + str.charAt(i);
+		}
+
+		System.out.println(rev);
+	}
+	
+	
+	//using StringBuilder Class its mutable and has "reverse" method.
 	public static String reverseStringSB(String str){  
 		
 	    StringBuilder sb=new StringBuilder(str);  
@@ -64,4 +88,5 @@ public class ReverseString {
 		
 	}
 	
+
 }
