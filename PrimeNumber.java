@@ -26,7 +26,7 @@ public class PrimeNumber {
 	
 	public static boolean isPrimeNo(int data) {
 		
-		//1. Can be divided by itself or zero
+		//1. Can be divided by itself and 1 only
 		//   13/13 is prime number
 		//   4/2 4/4  4 is not prime number
 		// 10  10/2 10/5 10/10   10 is not prime number
