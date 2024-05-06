@@ -67,6 +67,7 @@ public class HashMap_Demo {
         hm.put("company", "Datantar");
         hm.put("city", "Pune");
 
+        System.out.println("HashMap data, do not maintain insertion order---:");
         for(Map.Entry<String, String> me: hm.entrySet()) {
             System.out.print(me.getKey());
             System.out.print(" - "+me.getValue());
@@ -84,6 +85,7 @@ public class HashMap_Demo {
         lhm.put("company", "Datantar");
         lhm.put("city", "Pune");
 
+        System.out.println("LinkedHashMap data, maintains insertion order  ---:");
         System.out.println(lhm);  // {name=Birender, company=Datantar, city=Pune}  Maintains the order of insertion
     }
 
@@ -97,6 +99,7 @@ public class HashMap_Demo {
         tm.put("company", "Datantar");
         tm.put("city", "Pune");
 
+        System.out.println("TreeMap data, maintainse data in asscending order ---:");
         System.out.println(tm);   // {city=Pune, company=Datantar, name=Birender}   Maintains sorted order of keys
         System.out.println(tm.size());
         System.out.println(tm.values());
