@@ -25,9 +25,21 @@ public class TestArray {
         String name = "Birender";
         char[] charArrNames = name.toCharArray();
         for(int i = charArrNames.length-1 ; i >= 0 ; i-- ){
-            System.out.println(charArrNames[i]);
+            System.out.print(charArrNames[i]);
         }
+        System.out.println();
+        String fruit = "Apple";
 
+        char[] fruit_charArr = fruit.toCharArray();
+        for(int i=fruit_charArr.length-1; i>=0; i--){
+            System.out.print(fruit_charArr[i]);
+        }
+        System.out.println();
+
+        String name1 = "Abhivardhan";
+        List<String> list1 = new ArrayList<String>();
+        list1.add(name1);
+        System.out.println(list1.get(0));
 
 
     }
