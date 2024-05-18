@@ -36,3 +36,61 @@ INSERT INTO emp (emp_name, emp_dept_id) VALUES
 
 
 JOINS:
+To perform a join in a database, you typically use the JOIN clause to combine rows from two or more tables based on a related column between them. 
+In your case, you might want to join the emp and dept tables to get information about employees along with their department names.
+
+INNER JOIN:
+An INNER JOIN returns only the rows that have matching values in both tables based on the join condition specified in the ON clause. 
+In this case, the join condition is emp.emp_dept_id = dept.dept_id, meaning that only employees who belong to a department (where their emp_dept_id matches a dept_id in the dept table) will be included in the result set.
+
+SELECT emp.emp_id, emp.emp_name, dept.dept_name
+FROM emp
+JOIN dept ON emp.emp_dept_id = dept.dept_id;
+
+
+OUTER JOIN:
+
+test=# SELECT emp.emp_id, emp.emp_name, dept.dept_name
+test-# FROM emp
+test-# LEFT OUTER JOIN dept ON emp.emp_dept_id = dept.dept_id;
+ emp_id |   emp_name    |    dept_name    
+--------+---------------+-----------------
+      1 | John Doe      | Human Resources
+      2 | Jane Smith    | Finance
+      3 | Alice Johnson | Marketing
+      5 | User1         | null
+(4 rows)
+
+test=# SELECT emp.emp_id, emp.emp_name, dept.dept_name
+FROM emp
+RIGHT OUTER JOIN dept ON emp.emp_dept_id = dept.dept_id;
+ emp_id |   emp_name    |    dept_name    
+--------+---------------+-----------------
+      1 | John Doe      | Human Resources
+      2 | Jane Smith    | Finance
+      3 | Alice Johnson | Marketing
+      5 | User1         | null
+        |               | IT Operation
+        |               | Security
+(6 rows)
+
+test=# 
+test=# SELECT emp.emp_id, emp.emp_name, dept.dept_name
+FROM emp
+FULL OUTER JOIN dept ON emp.emp_dept_id = dept.dept_id;
+ emp_id |   emp_name    |    dept_name    
+--------+---------------+-----------------
+      1 | John Doe      | Human Resources
+      2 | Jane Smith    | Finance
+      3 | Alice Johnson | Marketing
+      5 | User1         | null
+        |               | IT Operation
+        |               | Security
+(6 rows)
+
+test=# 
+Certainly! A LEFT JOIN, also known as a LEFT OUTER JOIN, returns all rows from the left table (the first table mentioned in the FROM clause) and the matched rows from the right table (the second table mentioned) based on the specified join condition. If there is no match found in the right table, NULL values are returned for the columns from the right table.
+LEFT JOIN ensures that all rows from the emp table are included in the result set, regardless of whether there is a matching row in the dept table.
+If an employee does not have a corresponding department (i.e., there's no match based on the emp_dept_id), the dept_name column will contain NULL values.
+Rows from the dept table that do not have corresponding employees will be excluded from the result set.
+
