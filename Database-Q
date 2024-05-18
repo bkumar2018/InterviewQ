@@ -49,6 +49,7 @@ JOIN dept ON emp.emp_dept_id = dept.dept_id;
 
 
 OUTER JOIN:
+To perform an outer join, you can use either a LEFT OUTER JOIN, a RIGHT OUTER JOIN, or a FULL OUTER JOIN
 
 test=# SELECT emp.emp_id, emp.emp_name, dept.dept_name
 test-# FROM emp
