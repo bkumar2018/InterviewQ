@@ -95,3 +95,21 @@ LEFT JOIN ensures that all rows from the emp table are included in the result se
 If an employee does not have a corresponding department (i.e., there's no match based on the emp_dept_id), the dept_name column will contain NULL values.
 Rows from the dept table that do not have corresponding employees will be excluded from the result set.
 
+
+Use Cases:
+1. Left Joins are useful when you want to include all records from the primary table and only the related records from the secondary table.
+///////////////////
+
+The ALTER TABLE statement is used to add, delete, or modify columns in an existing table.
+ALTER TABLE emp ADD salary DECIMAL(10,2);
+
+The UPDATE statement is used to modify the value(s) in existing records in a table.
+UPDATE emp SET salary = 20500.02 WHERE emp_name = 'John Doe';
+
+/////
+Second Highest salary from an employee table ?
+Using DISTINCT and LIMIT keywords 
+
+1. Select DISTINCT salary FROM emp ORDER BY salary DESC LIMIT 1 OFFSET 1
+2. Select MAX(salary) as second_highest_salary FROM emp Where salary < (Select MAX(salary) from emp);
+
